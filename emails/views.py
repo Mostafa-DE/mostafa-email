@@ -32,4 +32,4 @@ def emailView(request):
     send_email_to_client(data)
     send_email_to_me(data)
 
-    return JsonResponse({"message": "Email View Works!"})
+    return JsonResponse({"message": "Email sent successfully..."})
