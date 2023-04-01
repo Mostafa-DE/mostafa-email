@@ -17,13 +17,19 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*.vercel.app', 'localhost', '*.railway.app']
-CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:3000", "https://mostafade.vercel.app"]
+ALLOWED_HOSTS = ['*.vercel.app', 'localhost', '*.railway.app', '127.0.0.1']
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1:8000",
+    "https://mostafade.vercel.app",
+]
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = (
     'localhost:3000',
     '127.0.0.1:3000',
-    '*.vercel.app'
+    '127.0.0.1:8000',
+    '*.vercel.app',
 )
 
 SESSION_COOKIE_SECURE = True

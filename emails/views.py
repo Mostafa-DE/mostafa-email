@@ -1,5 +1,6 @@
 from django.core.mail import send_mail
 from django.http import JsonResponse
+from django.shortcuts import render
 from django.template.loader import render_to_string
 
 
@@ -33,3 +34,7 @@ def emailView(request):
     send_email_to_me(data)
 
     return JsonResponse({"message": "Email sent successfully..."})
+
+
+def homeView(request):
+    return render(request, 'home.html')
