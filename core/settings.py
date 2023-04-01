@@ -14,22 +14,21 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*.vercel.app', 'localhost', '127.0.0.1', 'mostafa-email-production.up.railway.app']
+ALLOWED_HOSTS = ['mostafade.vercel.app', 'localhost', '127.0.0.1', 'mostafa-email-production.up.railway.app']
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://127.0.0.1:8000",
+    "http://localhost:8000",
     "https://mostafade.vercel.app",
-    "https://mostafa-email-production.up.railway.app",
-    "http://0.0.0.0:*",
 ]
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = (
-    'localhost:3000',
-    '127.0.0.1:*',
-    '0.0.0.0:*',
-    '*.vercel.app',
-    '*.railway.app',
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+    'https://mostafade.vercel.app',
 )
 
 # Application definition
@@ -48,7 +47,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
