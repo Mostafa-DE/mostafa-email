@@ -8,9 +8,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env()
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY')
 
@@ -23,13 +20,14 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "http://127.0.0.1:8000",
     "https://mostafade.vercel.app",
-    "https://mostafa-email-production.up.railway.app/"
+    "https://mostafa-email-production.up.railway.app"
+    "http://0.0.0.0:*",
 ]
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = (
     'localhost:3000',
-    '127.0.0.1:3000',
-    '127.0.0.1:8000',
+    '127.0.0.1:*',
+    '0.0.0.0:*',
     '*.vercel.app',
     '*.railway.app',
 )
